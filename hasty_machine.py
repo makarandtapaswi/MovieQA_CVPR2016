@@ -10,9 +10,7 @@ import progressbar as pb
 pb_widgets = ['Answering: ', pb.Percentage(), ' ', pb.Bar(), ' ', pb.ETA()]
 # Local imports
 import utils
-# Import MovieQA benchmark dataset
-sys.path.append('/home/makarand/Uni/Codes/UToronto/')
-import MovieQA_benchmark as MovieQA
+from movieqa_importer import MovieQA
 mqa = MovieQA.DataLoader()
 
 

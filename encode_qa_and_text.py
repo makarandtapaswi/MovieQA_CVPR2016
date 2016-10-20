@@ -5,7 +5,7 @@ import ipdb
 import pickle
 import word2vec as w2v
 import scipy.sparse as sps
-sys.path.append('/home/makarand/Uni/Codes/UToronto/skip-thoughts')
+sys.path.append('/u/makarand/Codes/UToronto/skip-thoughts')
 import skipthoughts
 import numpy as np
 import progressbar as pb
@@ -16,9 +16,7 @@ import tfidf as tfidfcalc
 # import video-text embedding
 # sys.path.append('/ais/guppy9/movie2text/video_text_embed')
 # from sentence_encoder import Encoder as VisTextEncoder
-# import MovieQA
-sys.path.append('/home/makarand/Uni/Codes/UToronto/')
-import MovieQA_benchmark as MovieQA
+from movieqa_importer import MovieQA
 mqa = MovieQA.DataLoader()
 
 

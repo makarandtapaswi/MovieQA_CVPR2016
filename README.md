@@ -11,6 +11,11 @@ This repository contains approaches introduced in the above paper.
 
 To replicate the different models and results please follow the instructions below:
 
+---
+
+### Add the dataset folder to path
+Change the path in <code>movieqa_importer.py</code>.
+
 ----
 
 ### Encode QAs and Text
