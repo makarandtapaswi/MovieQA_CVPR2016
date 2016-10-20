@@ -44,9 +44,13 @@ We evaluate different options here including answering based on:
 ----
 
 ### Searching Student
-coming soon
+Answer questions by searching for the best matching (set) of story sentences to the question and answer option.
+We evaluate different options here such as:
+(i) story sources: split_plot, subtitle, script, dvs
+(ii) representations: tfidf, word2vec, skipthought
+(iii) window size for the story
 
-<code>python cosine_similarity.py</code>
+<code>python cosine_similarity.py -h</code>
 
 ----
 
