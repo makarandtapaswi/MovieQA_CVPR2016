@@ -46,9 +46,9 @@ We evaluate different options here including answering based on:
 ### Searching Student
 Answer questions by searching for the best matching (set) of story sentences to the question and answer option.
 We evaluate different options here such as:
-(i) story sources: split_plot, subtitle, script, dvs
-(ii) representations: tfidf, word2vec, skipthought
-(iii) window size for the story
+(i) story sources: split_plot, subtitle, script, dvs;
+(ii) representations: tfidf, word2vec, skipthought; and
+(iii) window size for the story.
 
 <code>python cosine_similarity.py -h</code>
 
@@ -60,14 +60,19 @@ coming soon
 <code>python sscb.py</code>
 
 Quirks:
-This needs to be run several times. We pick the method that performs best on the internal dev set and then evaluate on the val set. Apparently the initialization of the model is very critical and shows wide variations in performance. 
+This needs to be run several times. We pick the method that performs best on the internal dev set and then evaluate on the val set. Apparently the initialization of the model is very critical and shows wide variations in performance.
 
 ----
 
 ### Modified Memory Networks
-coming soon
+Answer questions using a modified version of the End-To-End Memory Network [arXiv](https://arxiv.org/abs/1503.08895). The modifications include use of a fixed word embedding layer along with a shared linear projection, and the ability to pick one among multiple-choice multi-word answers. The memory network supports answering in all sources. The main options to run this program are:
+(i) story sources: split_plot, subtitle, script, dvs;
+(ii) number of memory layers (although this did not affect performance much); and
+(iii) training parameters: batch size, learning rate, #epochs.
 
-<code>python mqa_memN2N.py</code>
+For more details please refer to:
+
+<code>python memory_network_text.py -h</code>
 
 ----
 
@@ -81,8 +86,12 @@ Still working on updating this.
 - Word2Vec: Python installation using <code>pip install word2vec</code>
 - SkipThoughts: [Github repo](https://github.com/ryankiros/skip-thoughts)
 - Theano: [Github repo](https://github.com/Theano/Theano), tested on some versions of Theano-0.7 and 0.8.
+- scikit-learn (PCA)
 - python-gflags
+- optparse
+- nltk
 - scipy
 - numpy
+
 
 

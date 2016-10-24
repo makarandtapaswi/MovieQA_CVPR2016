@@ -60,7 +60,7 @@ def write_answerkeys_to_file(filename, answer_keys):
 
     with open(filename, 'w') as fid:
         for k in answer_keys.keys():
-            fid.write('%s %d\n' %(k, answer_keys[k])) 
+            fid.write('%s %d\n' %(k, answer_keys[k]))
     print "Wrote results to:", filename
 
 
