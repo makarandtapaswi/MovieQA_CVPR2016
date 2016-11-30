@@ -137,9 +137,12 @@ def load_story_feature(imdb_key, story, feature):
         # Word2Vec and SkipThought features are stored as numpy arrays
         return np.load(DOC_DESC_TEMPLATE % (story, feature, imdb_key))
 
-def load_qa_feature(qa, feature):
+def load_qa_feature(qa, feature, qid=None):
     """Load QA features for a particular QA.
     """
 
-    return np.load(QA_DESC_TEMPLATE % (feature, qa.qid))
+    if not qa and qid:
+        return np.load(QA_DESC_TEMPLATE % (feature, qid))
+    else:
+        return np.load(QA_DESC_TEMPLATE % (feature, qa.qid))
 
