@@ -55,12 +55,21 @@ We evaluate different options here such as:
 ----
 
 ### Searching Student with Convolutional Brain
-coming soon
+Emulates searching student, but with multiple 1x1 convolutional layers that combine similarity between \<story,question\> and \<story,answer\> products.
+Uses max and average pooling across sentences at the end.
+We evaluate different options including:
+(i) story sources: split_plot, subtitle, script, dvs; and
+(ii) representations: tfidf, word2vec, skipthought.
 
-<code>python sscb.py</code>
+<code>python sscb.py -h</code>  
+
+Inputs contain an option for <code>pad_percentile</code>.
+This controls the truncation or padding of zeros to stories to create batches.
+The value can be in the range of 90 to 100 (default) depending on your GPU memory.
 
 Quirks:
-This needs to be run several times. We pick the method that performs best on the internal dev set and then evaluate on the val set. Apparently the initialization of the model is very critical and shows wide variations in performance.
+SSCB seems to be fairly sensitive to initialization.
+We overcome this issue by training several networks (random start) and pick the model that shows best performance on the internal dev set.
 
 ----
 
@@ -77,6 +86,7 @@ For more details please refer to:
 ----
 
 ### Video-based Answering
+Releasing code for this is fairly complicated as it comes from several projects.
 Still working on updating this.
 
 ----
@@ -88,10 +98,9 @@ Still working on updating this.
 - Theano: [Github repo](https://github.com/Theano/Theano), tested on some versions of Theano-0.7 and 0.8.
 - scikit-learn (PCA)
 - python-gflags
+- progressbar
 - optparse
 - nltk
 - scipy
 - numpy
-
-
 
