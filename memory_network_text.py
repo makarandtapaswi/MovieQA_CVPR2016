@@ -414,15 +414,13 @@ def init_option_parser():
 
     usage = """
     Important options are printed here. Check out the code more tweaks.
-    %prog -s <story_source> [-z <evaluation_set>] [-n <num_mem_layers>]
+    %prog -s <story_source> [-n <num_mem_layers>]
                     [--learning_rate <lr>] [--batch_size <bs>] [--nepochs <ep>]
     """
 
     parser = OptionParser(usage=usage)
     parser.add_option("-s", "--story_source", action="store", type="string", default="",
                       help="Story source text: split_plot | dvs | subtitle | script")
-    parser.add_option("-z", "--evaluation_set", action="store", type="string", default="val",
-                      help="Run final evaluation on? [val] | test")
     parser.add_option("-n", "--num_mem_layers", action="store", type=int, default=1,
                       help="Number of Memory layers")
     parser.add_option("",   "--batch_size", action="store", type=int, default=8,
@@ -459,7 +457,6 @@ if __name__ == '__main__':
     options['train']['validate_after'] = 1                      # number of epochs to run validation after
     options['train']['gnorm'] = {'max_norm': 40}                # gradient normalization options 'max_norm' OR 'clip'
     # Data options
-    options['data']['evaluation_set'] = opts.evaluation_set     # Evaluation set (val|test)
     options['data']['source'] = opts.story_source               # use this data source for answering questions
     options['data']['learn_LUT'] = False                        # learn / load LUTs -- depending on data source
     options['data']['vocab_threshold'] = 1                      # word must occur >= N times for it to be part of vocabulary
