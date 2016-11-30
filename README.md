@@ -96,6 +96,7 @@ Still working on updating this.
 - Word2Vec: Python installation using <code>pip install word2vec</code>
 - SkipThoughts: [Github repo](https://github.com/ryankiros/skip-thoughts)
 - Theano: [Github repo](https://github.com/Theano/Theano), tested on some versions of Theano-0.7 and 0.8.
+- Lasagne: [Github repo](https://github.com/Lasagne/Lasagne), tested with Theano-0.8 and Lasagne-0.1 for SSCB.
 - scikit-learn (PCA)
 - python-gflags
 - progressbar
